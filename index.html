@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow - Academic Command Center & Productivity Suite</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme unauthenticated">
+
+    <!-- Auth View Container (Rendered outside normal layout shell when unauthenticated) -->
+    <div id="view-auth" class="app-view auth-layout"></div>
+
+    <!-- App Layout Shell -->
+    <div class="app-container">
+        
+        <!-- Header Nav -->
+        <header class="app-header glass-panel">
+            <div class="header-left">
+                <button class="menu-burger" id="mobile-menu-burger"><i class="fas fa-bars"></i></button>
+                <div class="brand">
+                    <i class="fas fa-graduation-cap brand-icon"></i>
+                    <h2>StudyFlow</h2>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="header-user-profile" data-view="profile" style="cursor: pointer;">
+                    <div class="user-details">
+                        <span class="user-name sync-profile-name">Guest User</span>
+                        <span class="user-role">Student</span>
+                    </div>
+                    <div class="user-avatar-wrapper sync-profile-avatar header-profile-avatar">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-user-block" data-view="profile" style="cursor: pointer;">
+                <div class="sidebar-avatar sync-profile-avatar">
+                    <!-- Avatar SVG will be loaded here -->
+                </div>
+                <h3 class="sync-profile-name">Guest User</h3>
+                <span class="sidebar-user-sub">Active Session</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-view="dashboard">
+                    <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-view="tasks">
+                    <i class="fas fa-tasks"></i> <span>Task Manager</span>
+                </a>
+                <a href="#" class="nav-item" data-view="calendar">
+                    <i class="fas fa-calendar-alt"></i> <span>Calendar</span>
+                </a>
+                <a href="#" class="nav-item" data-view="courses">
+                    <i class="fas fa-book-open"></i> <span>Course Organizer</span>
+                </a>
+                <a href="#" class="nav-item" data-view="notes">
+                    <i class="fas fa-sticky-note"></i> <span>Notes Workspace</span>
+                </a>
+                <a href="#" class="nav-item" data-view="timer">
+                    <i class="fas fa-stopwatch"></i> <span>Focus Pomodoro</span>
+                </a>
+                <a href="#" class="nav-item" data-view="analytics">
+                    <i class="fas fa-chart-line"></i> <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item" data-view="premium">
+                    <i class="fas fa-crown"></i> <span>GPA & Achievements</span>
+                </a>
+                <a href="#" class="nav-item" data-view="settings">
+                    <i class="fas fa-cog"></i> <span>Settings</span>
+                </a>
+                <a href="#" class="nav-item" data-view="social">
+                    <i class="fas fa-users"></i> <span>Study Network</span>
+                </a>
+                
+                <hr class="nav-divider">
+                
+                <a href="#" class="nav-item logout-btn logout-nav">
+                    <i class="fas fa-sign-out-alt"></i> <span>Sign Out</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- View wrappers toggled by the router -->
+            <div id="view-dashboard" class="app-view"></div>
+            <div id="view-tasks" class="app-view"></div>
+            <div id="view-calendar" class="app-view"></div>
+            <div id="view-courses" class="app-view"></div>
+            <div id="view-notes" class="app-view"></div>
+            <div id="view-timer" class="app-view"></div>
+            <div id="view-analytics" class="app-view"></div>
+            <div id="view-premium" class="app-view"></div>
+            <div id="view-settings" class="app-view"></div>
+            <div id="view-profile" class="app-view"></div>
+            <div id="view-social" class="app-view"></div>
+        </main>
+    </div>
+
+    <!-- Application Script Layer (Injected in Dependency Order) -->
+    <script src="js/state.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/notes.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/statistics.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/premium.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/social.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
